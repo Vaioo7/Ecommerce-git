@@ -1,0 +1,47 @@
+<%- include('desh_header') %>
+
+
+<div class="col-sm-12">
+    <div class="card tabs-card">
+        <div class="card-block p-0">
+            <!-- Nav tabs -->
+            <!-- Tab panes -->
+            <div class="tab-content card-block">
+                <div class="tab-pane active">   
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <form action="/Shipping" method="post">
+                            <input type="hidden" name="id" value="<%= record.id %>">
+                                
+                                
+                            <tr>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Product Code</th>
+                                <th class="text-center">quantity</th>
+                                <th class="text-center">total</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>  
+                            <tr>
+                                <td><img src="<%= record.product.avatar.url %>" height="50px" width="50px" alt="prod img" class="img-fluid"></td>
+                                <td><%= record.product.name %></td>
+                                <td><%= record.quantity %></td>
+                                <td><%= record.total %></td>
+                                <td><span class="label label-primary" name="status" value="Shipping">Shipping</span></td>
+                                <td><a href="/Edit_product_delivered/<%= record.id %>">Product confirm</td></a>
+                            </tr>
+                            
+                                
+                        </table>
+                        <div class="text-center">
+                            <button class="btn btn-outline-primary btn-round btn-sm" type="submit">submit</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('desh_footer') %>

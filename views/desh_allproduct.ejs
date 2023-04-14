@@ -1,0 +1,72 @@
+<%- include('desh_header') %>
+
+
+<div class="col-sm-12">
+    <div class="card tabs-card">
+        <div class="card-block p-0">
+            <!-- Nav tabs -->
+            <!-- Tab panes -->
+            <div class="tab-content card-block">
+                <div class="tab-pane active">   
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <tr>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Product Code</th>
+                                <th class="text-center">Customer</th>
+                                <th class="text-center">Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                            <% for(var p of record) { %>
+                            <tr>
+                                <td><img src="<%= p.product.avatar.url %>" height="50px" width="50px" alt="prod img" class="img-fluid"></td>
+                                <td><%= p.product.name %></td>
+                                <td><%= p.user.name %></td>
+                                <td><%= p.status %></td>
+                                <!-- <% if (typeof status !== 'undefined' && status !== null) { %>
+                                    <% if (status === 'Pending') { %>
+                                      <td><span class="label label-warning"><%= p.status %></span></td>
+                                    <% } else if (status === 'Shipping') { %>
+                                      <td><span class="label label-primary"><%= p.status %></span></td>
+                                    <% } else { %>
+                                      <td><span class="label label-danger">Unknown</span></td>
+                                    <% } %>
+                                  <% } else { %>
+                                    <td><span class="label label-danger">Status Not Found</span></td>
+                                  <% } %> -->
+                                <td><a href="/Edit_product/<%= p.id %>"><i class="ti-pencil"></i></a> || <i class="ti-cut"></i></td>
+                            </tr>
+                            <% } %>
+                            <!-- <tr>
+                                <td><img src="/images/product/prod3.jpg" alt="prod img" class="img-fluid"></td>
+                                <td>PNG002653</td>
+                                <td>Eugine Turner</td>
+                                <td><span class="label label-success">Delivered</span></td>
+                                <td>#7234417</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/images/product/prod4.jpg" alt="prod img" class="img-fluid"></td>
+                                <td>PNG002156</td>
+                                <td>Jacqueline Howell</td>
+                                <td><span class="label label-warning">Pending</span></td>
+                                <td>#7234454</td>
+                            </tr>
+                            <tr>
+                                <td><img src="/images/product/prod1.jpg" alt="prod img" class="img-fluid"></td>
+                                <td>PNG002413</td>
+                                <td>Jane Elliott</td>
+                                <td><span class="label label-primary"><%= p.status %></span></td>
+                                <td>#7234421</td>
+                            </tr> -->
+                        </table>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-outline-primary btn-round btn-sm">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('desh_footer') %>

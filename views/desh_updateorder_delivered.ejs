@@ -1,0 +1,48 @@
+<%- include('desh_header') %>
+
+
+<div class="col-sm-12">
+    <div class="card tabs-card">
+        <div class="card-block p-0">
+            <!-- Nav tabs -->
+            <!-- Tab panes -->
+            <div class="tab-content card-block">
+                <div class="tab-pane active">   
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <form action="/Delivered" method="post">
+                            <input type="hidden" name="id" value="<%= record.id %>">
+                                
+                                
+                            <tr>
+                                <th class="text-center">Image</th>
+                                <th class="text-center">Product Code</th>
+                                <th class="text-center">Country</th>
+                                <th class="text-center">State</th>
+                                <th class="text-center">Postcode</th>
+                                <th class="text-center">Status</th>
+                            </tr>  
+                            <tr>
+                                <td><img src="<%= record.product.avatar.url %>" height="50px" width="50px" alt="prod img" class="img-fluid"></td>
+                                <td><%= record.product.name %></td>
+                                <td><%= record.country %></td>
+                                <td><%= record.state %></td>
+                                <td><%= record.postcode %></td>
+                                <td><span class="label label-success" name="status" value="Delivered">Delivered</span></td>
+                                <!-- <td><a href="/lol/<%= record.id %>"><i class="ti-pencil"></i></a></td> -->
+                            </tr>
+                            
+                                
+                        </table>
+                        <div class="text-center">
+                            <button class="btn btn-outline-primary btn-round btn-sm" type="submit">submit</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('desh_footer') %>

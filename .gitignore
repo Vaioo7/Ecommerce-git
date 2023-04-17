@@ -1,5 +1,2 @@
-assets
 node_modules
-public
-tmp
 .env

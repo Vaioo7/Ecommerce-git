@@ -9,18 +9,6 @@ const path = require('path');
 const port = process.env.PORT || 5000;
 const app = express();
 
-// const mongoose = require('mongoose');
-// mongoose.set('strictQuery', false);
-// mongoose.connect("mongodb+srv://vaibhavviradiya:harekrishna@cluster0.r4ocifj.mongodb.net/?retryWrites=true&w=majority",{
-//     useNewUrlParser : true,
-//     useUnifiedTopology : true
-// }).then(()=>{
-//   console.log("connection is successful");
-// }).catch((error)=>{
-//   console.log(error);
-// });
-
-
 const errorMiddleware = require("../src/middleware/error");
 
 app.set("view engine", "ejs");
